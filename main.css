@@ -1,1 +1,9 @@
-
+body{    
+font-family: 'Barlow', sans-serif;
+    margin-top: 100px;
+    padding: 0px;
+    background: url(bgr.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
