@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 2em;
+    }
+    .red {
+      accent-color: red;
+    }
+    .green {
+      accent-color: green;
+    }
+    .blue {
+      accent-color: blue;
+    }
+  </style>
+  <body>
+    <input type="range" min="0" max="255" class="red" value="0" />
+    <input type="range" min="0" max="255" class="green" value="0" />
+    <input type="range" min="0" max="255" class="blue" value="0" />
+    <p>
+      Red : <span class="red-value">0</span>, Green :
+      <span class="green-value">0</span>, Blue <span class="blue-value">0</span>
+    </p>
+    <script>
+      // for each input
+      const red = document.querySelector(".red");
+      const green = document.querySelector(".green");
+      const blue = document.querySelector(".blue");
+
+      // for each span value
+
+      const redVal = document.querySelector(".red-value");
+      const greenVal = document.querySelector(".green-value");
+      const blueVal = document.querySelector(".blue-value");
+      const inputHandler = () => {
+        document.body.style.backgroundColor = `rgb(${red.value},${green.value},${blue.value}`;
+        redVal.innerHTML = red.value;
+        greenVal.innerHTML = green.value;
+        blueVal.innerHTML = blue.value;
+      };
+      red.addEventListener("input", inputHandler);
+      green.addEventListener("input", inputHandler);
+      blue.addEventListener("input", inputHandler);
+    </script>
+  </body>
+</html>
